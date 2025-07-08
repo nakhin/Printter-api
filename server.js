@@ -7,7 +7,10 @@ const cors = require('cors');
 const app = express();
 const PORT = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://printter01.netlify.app', // อนุญาตเฉพาะ Netlify
+  credentials: true
+}));
 
 const sheetApiUrl = 'https://script.google.com/macros/s/AKfycbz8knlr_Y7ZhKi0MoSV1A2BhW83-HkV4XEYiLNAc8J1oZEIZE1sjEuZCPy8OhA1O37C/exec';
 
